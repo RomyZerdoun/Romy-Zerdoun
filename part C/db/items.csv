@@ -1,0 +1,13 @@
+﻿item_id,item_name,store_name,seller_id,rating,description,price,image_id,review,quantity_left,category,exclusive
+1,bag,roms shop,1,4,seacend heand bag,100,../images/item1.jpg,39,37,men,arrivals
+2,coat,renee shop,2,4,seacend heand bag,100,../images/item5.jpg,37,20,women,featured
+3,baby girl,tal shop,3,4,seacend heand bag,100,../images/item11.jpg,56,47,kid,special
+4,coat,shan shop,4,4,seacend heand bag,100,../images/item7.jpg,47,33,best-seller,seller
+5,gloves,roms shop,1,5,seacend heand bag,20,../images/item8.jpg,44,28,men,arrivals
+6,jeans,renee shop,2,5,seacend heand bag,20,../images/item9.jpg,29,39,women,featured
+7,baby boy,tal shop,3,5,seacend heand bag,20,../images/item10.jpg,44,58,kid,special
+8,coat,shan shop,4,5,seacend heand bag,20,../images/item13.jpg,58,39,best seller,seller
+9,t-shirt,roms shop,1,3,seacend heand bag,55,../images/item14.jpg,21,23,men,arrivals
+10,jacket,renee shop,2,3,seacend heand bag,55,../images/item15.jpg,56,43,women,featured
+11,jacket,tal shop,3,3,seacend heand bag,55,../images/item12.jpg,21,43,men,arrivals
+12,hat,shan shop,4,3,seacend heand bag,55,../images/item17.jpg,26,47,women,featured

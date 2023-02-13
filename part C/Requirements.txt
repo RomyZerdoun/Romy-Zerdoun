@@ -1,0 +1,143 @@
+Welcome to the Vintage Website!
+
+This repository contains the code for a website that sells vintage clothing and accessories. 
+Our goal is to provide customers with unique and stylish pieces from past eras.
+
+Here's the requirements for the vintage website:
+-> lists all the required packages that need to be installed for the website to function properly: 
+	express
+	body-parser
+	csvtojson
+	path
+	mysql2
+	cookie-parser
+
+
+-> Getting Started:
+To get started, follow these steps:
+	1.Install all npm packages required for the website using the following command:
+			npm install --save express body-parser path mysql2 csvtojson cookie-parser
+		This will install all the required packages and save them to your package.json file as dependencies.
+
+	2.Start the application:
+		nodemon index.js
+	
+	3. Update the server information if needed (db_config.js): 
+    		HOST: "localhost",
+    		USER: "root",
+    		PASSWORD: "***",
+    		DB: "web"
+	
+	4.create data base:
+		Visit:  http://localhost:3000/createDb in your web browser
+
+	5.Visit:  http://localhost:3000 in your web browser to view the website.
+	
+	* you can drop all the table : 
+		Visit:  http://localhost:3000/dropDb in your web browser
+
+-> ROUTES
+
+'/createDb'
+'/dropDb'
+
+'/readUsersTable'
+'/readSellersTable'
+'/readItemsTable'
+
+'/deleteUser'
+'/deleteSeller'
+'/deleteItem'
+
+'/updateUser'
+'/updateSeller'
+'/updateItem'
+
+	
+-> syntax for creating the table:
+
+//create tables Users
+const createUsersTable = (req,res)=>{
+    var Q11 = "CREATE TABLE IF NOT EXISTS users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, email varchar(255) not null, name VARCHAR(255) not null, address VARCHAR(255) not null, phone_number VARCHAR(255) not null, password varchar(25) not null) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+    sql.query(Q11,(err,mysqlres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in creating users table"});
+            return;
+        }
+        console.log('users table created successfully');
+        return;
+    })
+};
+
+//create tables seller 
+const createSellerTable = (req,res)=>{
+    var Q51 = "CREATE TABLE IF NOT EXISTS sellers (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, seller_email varchar(255) not null, seller_id INT not null not null, store_name VARCHAR(255) not null, seller_name VARCHAR(255) not null, description TEXT not null, rating INT not null, image_id VARCHAR(200) not null) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+    sql.query(Q51,(err,mysqlres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in creating sellers table"});
+            return;
+        }
+        console.log('sellers table created successfully');
+        return;
+    })
+};
+
+
+//create tables items
+const createItemTable = (req,res)=>{
+    var Q21 = "CREATE TABLE IF NOT EXISTS items (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, item_id varchar(255), item_name VARCHAR(255) not null, store_name VARCHAR(255) not null, seller_id INT not null not null, rating INT not null, description TEXT not null, price FLOAT not null, image_id VARCHAR(255), review TEXT, quantity_left INT not null, category VARCHAR(255) not null, exclusive VARCHAR(255) not null) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+    sql.query(Q21,(err,mysqlres)=>{
+        if (err) {
+            console.log("error ", err);
+            res.status(400).send({message: "error in creating items table"});
+            return;
+        }
+        console.log('items table created successfully');
+        return;
+    })
+};
+
+
+
+-> File Structure:
+Vintage Website
+|-- static
+|   |-- css
+|   |   |-- vintage.css
+|   |-- js
+|   |   |-- index.js
+|   |   |-- cart.js
+|   |   |-- item.js
+|   |   |-- login.js
+|   |   |-- navbar.js
+|   |   |-- products.js
+|   |   |-- register.js
+|   |   |-- seller.js
+|   |   |-- store.js
+|   |   |-- vintage.js
+|   |-- images
+|-- views
+|   |-- about.html
+|   |-- cart.html
+|   |-- contact.html
+|   |-- index.html
+|   |-- item.html
+|   |-- login.html
+|   |-- products.html
+|   |-- register.html
+|   |-- seller.html
+|   |-- store.html
+|-- db
+|   |-- CRUD.js
+|   |-- CRUDdb.js
+|   |-- db.js
+|   |-- db_config.js
+|   |-- item.csv
+|   |-- seller.csv
+|   |-- users.csv
+|-- node_modules
+|-- index.js
+|-- README.md
+|-- requirements.txt
